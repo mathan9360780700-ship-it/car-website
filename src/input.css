@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme{
+    --font-name: "Playfair Display", serif
+}
+#slides{
+    overflow: hidden;
+}
+#slide img{
+    object-fit: cover;
+}
+.slide{
+    display: none;
+}
+.slide.active{
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from{ opacity: 0.4;}
+    to{ opacity: 1;}
+}
+#image{
+    transform: skew(10degs);
+}
+
+#nav-items{
+    background: transparent;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 255);
+    padding: 0.5em;
+}
+#nav{
+    position: sticky;
+    top: 25px;
+    background-color: white;
+    z-index: 100;
+}
+.animation{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: 1s ease-in-out;
+}
+.animation.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+.animation-right{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 1s ease-in-out;
+}
+.animation-right.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+.title{
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: 1s ease-in-out;
+}
+.title.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+#about-image{
+    transition: all 0.7s ease;
+    opacity: 0.96;
+}
+#about-image:hover{
+    opacity: 1;
+}
+#image1{
+    transition: 2s ease-in-out;
+    overflow-x: hidden;
+    transform: translateX(1950%);
+    animation: scroll 8s linear infinite;
+}
+@keyframes scroll{
+    to{
+         transform: translateX(-550%);
+         overflow-x: auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+    #nav-items{
+        position: absolute;
+        top: 70px;
+        left: 200px;
+        width: 100px;
+        border-radius: 10px;
+        display: flex;
+        gap: 10px;
+        padding: 15px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgb(255, 255, 255);
+    }
+    #image1{
+        width:40px;
+        overflow-x: hidden;
+        display: flex;
+        gap: 10px;
+        transform: translateX(100%);
+        animation: scroll 7s infinite;
+    }
+    @keyframes scroll{
+        to{
+            transform: translateX(-850%);
+        }
+    }
+    #copy-right{
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 100%;
+        width: 15px;
+        font-size: 10px;
+        height: 18px;
+        text-align: center;
+    }
+    #icon-heading1:hover{
+        width: 90px;
+    }
+    #icon-heading2:hover{
+        width: 90px;
+    }
+    #icon-heading3{
+        width: 90px;
+    }
+    #icon-heading4{
+        width: 65px;
+    }
+
+
+}
+#instagram:hover{
+    background: linear-gradient(210deg,
+     rgb(162, 0, 255), rgb(255, 0, 255),  red, rgb(255, 166, 0), red );
+    background-size: 200% 100%;
+}
+#shrink{
+    animation-duration: 5s;
+    position: sticky;
+    top: 0;
+    animation-range: scroll();
+    animation-timeline: cover 50% cover 200%;
+    animation: shrink linear both ease-in-out;
+}
+@keyframes shrink{
+    from{
+        transform: scale(1);
+        
+    }
+    to{
+        transform: scale(1);
+    }
+}
+#icons{
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn{
+    from {
+        transfom: translateX(-100%);
+    }
+}
+#contact-information{
+    letter-spacing: 3px;
+}
